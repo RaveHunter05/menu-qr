@@ -59,6 +59,7 @@ class Menu(models.Model):
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50, verbose_name='Nombre de Categoría')
+    category_show = models.CharField(max_length=50, verbose_name='Nombre de categoría a mostrar', null=True)
     menu_id = models.ForeignKey('Menu', on_delete=models.CASCADE, verbose_name='Menú', null=True)
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
@@ -66,7 +67,7 @@ class Category(models.Model):
         auto_now=True, verbose_name='Última actualización')
     
     def __str__(self):
-        return self.category_name
+        return self.category_name + ' ' + self.menu_id.restaurant.name
 
 class Product(models.Model):
     currency = (

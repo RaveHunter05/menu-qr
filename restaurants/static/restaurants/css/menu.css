@@ -6,6 +6,10 @@
   font-family: 'Poppins';
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .banner-portada {
   position: relative;
   width: 100vw;
@@ -61,19 +65,7 @@
   height: 10rem !important;
 }
 
-.product{
-  display: grid;
-  grid-template-columns: 15% 70% 15%;
-  column-gap: 0.5rem;
-  margin: .6rem 0;
-}
-
-.product-img{
-  width: 100%;
-}
-
 .product-price{
-  margin: auto;
   font-weight: bold;
   font-size: 1.3rem;
 }
@@ -117,10 +109,6 @@
 
   .product-price{
     font-size: 0.7rem;
-  }
-
-  .product{
-    grid-template-columns: 15% 65% 20%;
   }
 }
 
@@ -180,7 +168,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.42);
   height: 100%;
   width: 100%;
   z-index: 1;
@@ -199,7 +187,6 @@
 }
 
 .menu-header h2{
-  border: 2px solid #707070;
   padding: 1rem 4rem;
   width: 30%;
   background-color: white;
@@ -207,6 +194,7 @@
   color: #172433;
   margin-top: -3rem;
   font-size: 2.1rem;
+  box-shadow: 4px 3px 7px #707070;
 }
 
 .logo{
@@ -238,5 +226,87 @@
   .product-price{
     float: right;
   }
+
+  .menu-header h2{
+    font-size: 1.5rem;
+  }
   
+}
+
+/* flecha regresar */
+
+.flecha-regresar{
+  color: #EF4C00;
+  font-size: 5rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.flecha-regresar:hover{
+  cursor: pointer;
+  /* color:  #fff000; */
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+
+@media(max-width: 680px){
+  .flecha-regresar{
+    font-size: 4rem;
+    top: 0rem;
+    left: 1.2rem;
+  }
+}
+
+/* Imagen categoria, descripción y precios */
+
+.menu-items > article{
+  display: flex;
+  margin-bottom: 6rem;
+}
+
+.menu-items > article >*{
+  margin: 0rem 3.5rem;
+}
+
+.menu-items > article img{
+  height: 22rem;
+  width: auto;
+  /* flex: 1; */
+}
+
+.category-description{
+  flex: 1;
+}
+
+.category-description h3{
+  font-weight: bolder;
+  font-size: 1.8rem;
+  margin: 0rem 0 2rem 0rem;
+  text-transform: uppercase;
+}
+
+.product{
+  margin: .6rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media(max-width:680px){
+
+  .menu-items > article {
+      flex-direction: column;
+      margin-bottom: 3rem;
+  }
+
+  .menu-items > article >*{
+    margin: 1rem 0rem;
+  }
+  
+  .menu-items > article img {
+    width: 100%;
+    height: auto;
+    margin: 0rem 0rem 1rem 0rem;
+  }
 }
